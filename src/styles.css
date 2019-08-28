@@ -1,1 +1,43 @@
 /* You can add global styles to this file, and also import other style files */
+
+.owl-carousel {
+    width: 90% !important;
+    margin: 10% auto;
+  }
+   
+  .owl-carousel .owl-nav {
+    overflow: hidden;
+    height: 0px;
+  }
+   
+  .owl-carousel .nav-btn {
+    height: 47px;
+    position: absolute;
+    width: 26px;
+    cursor: pointer;
+    top: 30% !important;
+  }
+   
+  .owl-carousel .owl-prev.disabled,
+  .owl-carousel .owl-next.disabled {
+    pointer-events: none;
+    opacity: 0.2;
+  }
+   
+  .owl-carousel .prev-slide {
+    background: url(./assets/images/prev_slide.png) no-repeat scroll 0 0;
+    left: -33px;
+  }
+   
+  .owl-carousel .next-slide {
+    background: url(./assets/images/next_slide.png) no-repeat scroll 0 0;
+    right: -33px;
+  }
+   
+  .owl-carousel .prev-slide:hover {
+    background-position: 0px -53px;
+  }
+   
+  .owl-carousel .next-slide:hover {
+    background-position: -24px -53px;
+  }

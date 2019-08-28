@@ -8,6 +8,8 @@ import { AppComponent } from './app.component';
 import { MzButtonModule, MzInputModule } from 'ngx-materialize';
 import { DashboardComponent } from './dashboard/dashboard.component';
 
+import { OwlModule } from 'ngx-owl-carousel';
+
 
 @NgModule({
   declarations: [
@@ -19,7 +21,8 @@ import { DashboardComponent } from './dashboard/dashboard.component';
     BrowserModule,
     AppRoutingModule,
     MzButtonModule,
-    MzInputModule
+    MzInputModule,
+    OwlModule
   ],
   providers: [],
   bootstrap: [AppComponent]
