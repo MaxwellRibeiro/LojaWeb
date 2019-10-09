@@ -9,12 +9,16 @@ import { MzButtonModule, MzInputModule } from 'ngx-materialize';
 import { DashboardComponent } from './dashboard/dashboard.component';
 
 import { OwlModule } from 'ngx-owl-carousel';
+import { HeaderComponent } from './header/header.component';
+import { FooterComponent } from './footer/footer.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    DashboardComponent
+    DashboardComponent,
+    HeaderComponent,
+    FooterComponent
   ],
   imports: [
     BrowserAnimationsModule,

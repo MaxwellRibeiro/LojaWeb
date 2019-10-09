@@ -7,6 +7,37 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DashboardComponent implements OnInit {
 
+  produtos: any[] = [
+    {
+      "name": "Notebook Samsung",
+      "foto": "https://images-americanas.b2w.io/produtos/01/00/img12/134412/9/134412967_1GG.jpg",
+      "descricao2": "Notebook Samsung Expert X30 Intel Core I5 Quad-core 8GB 1TB Tela LED HD 15.6” Windows 10 Home - Cinza.",
+      "descricao": "Notebook Samsung Expert X30..."
+    },
+    {
+      "name": "Mcleod  Mueller",
+      "foto": "https://images-americanas.b2w.io/produtos/01/00/item/124651/3/124651374_1GG.jpg",
+      "descricao2": "Fogão Piso Consul 4 Bocas CFO4N Branco Bivolt.",
+      "descricao": "Fogão Piso Consul 4 Bocas C..."
+    },
+    {
+      "name": "Mcleod  Mueller",
+      "foto": "https://images-americanas.b2w.io/produtos/01/00/item/124651/3/124651374_1GG.jpg",
+      "descricao2": "Fogão Piso Consul 4 Bocas CFO4N Branco Bivolt.",
+      "descricao": "Fogão Piso Consul 4 Bocas C..."
+    },
+    {
+      "name": "Aguirre  Ellis",
+      "foto": "https://www.idealmarketing.com.br/blog/wp-content/uploads/2018/02/produto.png",
+      "descricao": "I am a very simple card. I am good at containing small bits of information."
+    },
+    {
+      "name": "Cook  Tyson",
+      "foto": "https://www.idealmarketing.com.br/blog/wp-content/uploads/2018/02/produto.png",
+      "descricao": "I am a very simple card. I am good at containing small bits of information."
+    }
+  ];
+
   constructor() { }
 
   ngOnInit() {
