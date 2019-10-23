@@ -14,15 +14,16 @@
     <div class="section">
         <div class="row">
             <div *ngFor="let produto of produtos" class="col s12 m4">
-                <div class="card" style="padding:2%" style="height: 450px;">
+                <div class="card" style="padding:1px; height: 500px;" >
                     <div class="card-image">
-                        <img src={{produto.foto}} width="200px" height="290px" />
+                        <img src={{produto.Foto}} width="200px" height="290px" />
                     </div>
-                    <div class="card-content">
-                        <p>{{produto.descricao}}</p>
+                    <div class="card-content texto" style="height: 150px;">
+                        <p>{{produto.Descricao}}
+                        </p>
                     </div>
-                    <div class="card-action">
-                        <a href="#">Mais Detalhes</a>
+                    <div class="card-action" >
+                        <a href="#">Comprar</a>
                     </div>
                 </div>
             </div>

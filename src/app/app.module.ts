@@ -12,6 +12,8 @@ import { OwlModule } from 'ngx-owl-carousel';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 
+import { HttpClientModule } from '@angular/common/http';
+
 
 @NgModule({
   declarations: [
@@ -26,7 +28,8 @@ import { FooterComponent } from './footer/footer.component';
     AppRoutingModule,
     MzButtonModule,
     MzInputModule,
-    OwlModule
+    OwlModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
