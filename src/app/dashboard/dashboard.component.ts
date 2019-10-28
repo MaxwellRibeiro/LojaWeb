@@ -31,7 +31,7 @@ export class DashboardComponent implements OnInit {
     const uploadData = new FormData();
     uploadData.append('myFile', this.selectedFile, this.selectedFile.name);
    
-    this.http.post('https://localhost:44376/api/produtos/UploadFiles', uploadData, {
+    this.http.post('http://localhost:300/api/produtos/UploadFiles', uploadData, {
       reportProgress: true,
       observe: 'events'
     })

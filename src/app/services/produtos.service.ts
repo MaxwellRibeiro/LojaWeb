@@ -6,7 +6,7 @@ import { HttpClient } from '@angular/common/http';
 })
 export class ProdutosService {
 
-  private REST_API_SERVER = "https://localhost:44376/api/produtos";
+  private REST_API_SERVER = "http://localhost:300/api/produtos";
 
   constructor(private httpClient: HttpClient) { }
 
