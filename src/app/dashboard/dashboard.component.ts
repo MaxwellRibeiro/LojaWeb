@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ProdutosService } from '../services/produtos.service';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-dashboard',
@@ -9,8 +10,10 @@ import { ProdutosService } from '../services/produtos.service';
 export class DashboardComponent implements OnInit {
 
   produtos: any[] = [];
+  selectedFile: any;
 
-  constructor(private produtosService : ProdutosService) { }
+  constructor(private produtosService : ProdutosService,
+              private http : HttpClient) { }
 
   ngOnInit() {
     this.produtosService.sendGetRequest().subscribe((data: any[])=>{
@@ -18,6 +21,26 @@ export class DashboardComponent implements OnInit {
       this.produtos = data;
     })  
   }
+
+  onFileChanged(event) {
+    this.selectedFile = event.target.files[0];
+    console.log(this.selectedFile);
+  }
+
+  onUpload() {
+    const uploadData = new FormData();
+    uploadData.append('myFile', this.selectedFile, this.selectedFile.name);
+   
+    this.http.post('https://localhost:44376/api/produtos/UploadFiles', uploadData, {
+      reportProgress: true,
+      observe: 'events'
+    })
+      .subscribe(event => {
+        console.log(event); // handle event here
+      });
+  }
+
+
 
   carouselOptions = {
     margin: 25,
