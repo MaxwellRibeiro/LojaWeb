@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { MzSidenavModule } from 'ngx-materialize'
 
 @Component({
   selector: 'app-header',

@@ -1,20 +1,34 @@
 <nav>
-  <div class="nav-wrapper blue darken-4">
-      <img class="brand-logo" src="http://localhost:300/logo.png" height="60px" width="60px" />
-      <a href="#" data-activates="menu-mobile" class="button-collapse">
-          <i class="material-icons">menu</i>
-      </a>
-      <ul class="right hide-on-med-and-down">
-          <li><a href="#">Angular</a></li>
-          <li><a href="#">Ionic</a></li>
-          <li><a href="#">TypeScript</a></li>
-          <li><a routerLink="/CadastroProduto" routerLinkActive="active">Cadastro Produto</a></li>
-      </ul>
-      <ul class="side-nav" id="menu-mobile">
-          <li><a href="#">Angular</a></li>
-          <li><a href="#">Ionic</a></li>
-          <li><a href="#">TypeScript</a></li>
-          <li><a routerLink="/CadastroProduto" routerLinkActive="active">Cadastro Produto</a></li>
-      </ul>
-  </div>
-</nav>
+        <div class="nav-wrapper blue darken-4">
+            <img class="brand-logo" style="margin-top: 8px;" src="http://localhost:300/logo.png" height="40px" width="40px" />
+            <a href="#" id="btn-sidenav-demo" class="button-collapse">
+                <i class="material-icons">menu</i>
+            </a>
+            <ul class="right hide-on-med-and-down">
+                    <li><a routerLink="/CadastroProduto">Angular</a></li>
+                    <li><a href="#">Ionic</a></li>
+                    <li><a href="#">TypeScript</a></li>
+                    <li><a href="#">Cordova</a></li>
+                </ul>
+        </div>
+        </nav>
+              
+              <mz-sidenav
+                [id]="'sidenav-demo'"
+                [collapseButtonId]="'btn-sidenav-demo'">
+                <mz-sidenav-header>
+                  Sidenav header
+                </mz-sidenav-header>
+                <mz-sidenav-subheader>Link Subheader</mz-sidenav-subheader>
+                <mz-sidenav-link>
+                  <a href="#">First Link</a>
+                </mz-sidenav-link>
+                <mz-sidenav-divider></mz-sidenav-divider>
+                <mz-sidenav-link [active]="true">
+                  <a href="#">Active Link</a>
+                </mz-sidenav-link>
+                <mz-sidenav-divider></mz-sidenav-divider>
+                <mz-sidenav-link>
+                  <a href="#" class="waves-effect">Second Link With Waves</a>
+                </mz-sidenav-link>
+              </mz-sidenav>

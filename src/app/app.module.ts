@@ -5,7 +5,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
-import { MzButtonModule, MzInputModule } from 'ngx-materialize';
+import { MzButtonModule, MzInputModule, MzSidenavModule  } from 'ngx-materialize';
 import { DashboardComponent } from './dashboard/dashboard.component';
 
 import { OwlModule } from 'ngx-owl-carousel';
@@ -30,6 +30,7 @@ import { CadastroprodutoComponent } from './pages/cadastroproduto/cadastroprodut
     AppRoutingModule,
     MzButtonModule,
     MzInputModule,
+    MzSidenavModule,
     OwlModule,
     HttpClientModule
   ],
