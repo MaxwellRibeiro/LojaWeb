@@ -14,6 +14,7 @@ import { FooterComponent } from './footer/footer.component';
 
 import { HttpClientModule } from '@angular/common/http';
 import { CadastroprodutoComponent } from './pages/cadastroproduto/cadastroproduto.component';
+import { LoginComponent } from './pages/login/login.component';
 
 
 @NgModule({
@@ -22,7 +23,8 @@ import { CadastroprodutoComponent } from './pages/cadastroproduto/cadastroprodut
     DashboardComponent,
     HeaderComponent,
     FooterComponent,
-    CadastroprodutoComponent
+    CadastroprodutoComponent,
+    LoginComponent
   ],
   imports: [
     BrowserAnimationsModule,
