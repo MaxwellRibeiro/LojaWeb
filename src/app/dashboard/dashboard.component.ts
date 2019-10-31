@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ProdutosService } from '../services/produtos.service';
 import { HttpClient } from '@angular/common/http';
+import { Produto } from '../models/produto.model';
 
 @Component({
   selector: 'app-dashboard',
@@ -12,8 +13,14 @@ export class DashboardComponent implements OnInit {
   produtos: any[] = [];
   selectedFile: any;
 
+  testeProdutos: Produto[];
+
   constructor(private produtosService : ProdutosService,
               private http : HttpClient) { }
+
+  public getAllUsers() {
+    this.produtosService.getAllProdutos().subscribe(produtos => this.testeProdutos = produtos);
+  }
 
   ngOnInit() {
     this.produtosService.sendGetRequest().subscribe((data: any[])=>{
