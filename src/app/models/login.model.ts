@@ -9,4 +9,8 @@ export class Login implements Deserializable {
          return Object.assign(this, input);
     }
 
+    serialize(input: this): any {
+        return JSON.stringify(input);
+    }
+
 }
