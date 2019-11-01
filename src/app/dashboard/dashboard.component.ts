@@ -10,23 +10,18 @@ import { Produto } from '../models/produto.model';
 })
 export class DashboardComponent implements OnInit {
 
-  produtos: any[] = [];
+  produtos: Produto[];
   selectedFile: any;
-
-  testeProdutos: Produto[];
 
   constructor(private produtosService : ProdutosService,
               private http : HttpClient) { }
 
   public getAllUsers() {
-    this.produtosService.getAllProdutos().subscribe(produtos => this.testeProdutos = produtos);
+    this.produtosService.getAllProdutos().subscribe(produtos => this.produtos = produtos);
   }
 
   ngOnInit() {
-    this.produtosService.sendGetRequest().subscribe((data: any[])=>{
-      console.log(data);
-      this.produtos = data;
-    })  
+     this.getAllUsers();
   }
 
   onFileChanged(event) {

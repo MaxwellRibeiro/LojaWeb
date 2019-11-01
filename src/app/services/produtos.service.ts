@@ -12,11 +12,7 @@ export class ProdutosService {
   private REST_API_SERVER = "http://localhost:300/api/produtos";
 
   constructor(private httpService: HttpClient) { }
-
-  public sendGetRequest(){
-    return this.httpService.get(this.REST_API_SERVER);
-  }
-
+  
   public getAllProdutos(): Observable<Produto[]> {
     return this.httpService.get<Produto[]>(this.REST_API_SERVER).pipe(
       map(data => data.map(data => new Produto().deserialize(data)))
