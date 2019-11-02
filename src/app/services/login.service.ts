@@ -9,18 +9,15 @@ import { map } from 'rxjs/operators';
 })
 export class LoginService {
 
-  private REST_API_SERVER = "http://localhost:300/api/produtos";
+  private REST_API_SERVER = "http://localhost:300/api/Login";
+  private REST_API_LOCAL = "https://localhost:44376/api/Login";
 
+  private configheaders = { headers: { 'Content-Type': 'application/json'} };
 
   constructor(private httpService: HttpClient) { }
 
-  public VerificarAcesso(login: Login): Observable<Boolean> {
-    return this.httpService.post<Boolean>(this.REST_API_SERVER, new Login().serialize(login)).pipe(
-      map(data => {
-        console.log(data);
-        return data;
-      })
-    );
+  public VerificarAcesso(login: Login) { 
+    return this.httpService.post<Boolean>(this.REST_API_LOCAL + "/Verificar", new Login().serialize(login), this.configheaders );
   }
   
 }
