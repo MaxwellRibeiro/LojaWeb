@@ -10,21 +10,17 @@
 </owl-carousel>
 
 <div class="row">
-    <div *ngFor="let produto of produtos" class="col s12 m3" >
-      <div class="card">
-        <div class="card-image">
-          <img src={{produto.UrlFoto}} width="200px" height="290px">
-          <a class="btn-floating halfway-fab waves-effect waves-light red"><i class="material-icons">add</i></a>
-        </div>
-        <div class="card-content" style="height:150px" >
-          <p >{{produto.Descricao}}</p>
-        </div>
+  <div *ngFor="let produto of produtos" class="col s12 m3" >
+    <div class="card">
+      <div class="card-image">
+        <img src={{produto.UrlFoto}} width="200px" height="290px">
+        <a class="btn-floating halfway-fab waves-effect waves-light red"><i class="material-icons">add</i></a>
+      </div>
+      <div class="card-content" style="height:150px" >
+        <p >{{produto.Descricao}}</p>
       </div>
     </div>
   </div>
-
-
- 
-    
+</div>
 
 <app-footer></app-footer>
