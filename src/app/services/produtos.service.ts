@@ -10,6 +10,9 @@ import  {map } from 'rxjs/operators';
 export class ProdutosService {
 
   private REST_API_SERVER = "http://localhost:300/api/produtos";
+  private REST_API_LOCAL = "https://localhost:44376/api/produtos";
+
+  private configheaders = { headers: { 'Content-Type': 'application/json'} };
 
   constructor(private httpService: HttpClient) { }
   
@@ -17,6 +20,10 @@ export class ProdutosService {
     return this.httpService.get<Produto[]>(this.REST_API_SERVER).pipe(
       map(data => data.map(data => new Produto().deserialize(data)))
     );
+  }
+
+  public CadastrarProduto(produto: Produto) { 
+    return this.httpService.post<Boolean>(this.REST_API_LOCAL + "/Insert", new Produto().serialize(produto), this.configheaders );
   }
 
 }
