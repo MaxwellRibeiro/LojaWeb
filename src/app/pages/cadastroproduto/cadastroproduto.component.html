@@ -3,9 +3,21 @@
       <form class="col s12" id="reg-form">
         <div class="row">
             <div class="input-field col s6">
-                <input id="nome_produto" type="text" class="validate" required />
-                <label for="nome_produto">teste</label>
-              </div>
+                <div class = "file-field input-field">
+                   <div class = "btn">
+                      <span>Browse</span>
+                      <input type = "file" (change)="onFileChanged($event)" />
+                   </div>
+                   <div class = "file-path-wrapper">
+                      <input class = "file-path validate" type = "text" placeholder = "Upload file" />
+                   </div>
+                   
+                </div>
+                <div class = "btn" (click)="onUpload()">
+                    <span>Upload</span>
+                 </div>
+              <img class="responsive-img" src={{produto.UrlFoto}}>
+            </div>
           <div class="input-field col s6">
             <input id="Nome" name="Nome" type="text" class="validate" [(ngModel)]="produto.Nome" required >
             <label for="Nome">Nome do Produto</label>
@@ -39,6 +51,3 @@
     </div>
   </div>
 
-<img class="responsive-img" src={{produto.UrlFoto}}>
-<input type="file" (change)="onFileChanged($event)">
-<button (click)="onUpload()">Upload!</button>
