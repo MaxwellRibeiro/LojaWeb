@@ -11,7 +11,7 @@ import { Produto } from '../models/produto.model';
 export class DashboardComponent implements OnInit {
 
   produtos: Produto[];
-  selectedFile: any;
+  
 
   constructor(private produtosService : ProdutosService,
               private http : HttpClient) { }
@@ -23,26 +23,6 @@ export class DashboardComponent implements OnInit {
   ngOnInit() {
      this.getAllUsers();
   }
-
-  onFileChanged(event) {
-    this.selectedFile = event.target.files[0];
-    console.log(this.selectedFile);
-  }
-
-  onUpload() {
-    const uploadData = new FormData();
-    uploadData.append('myFile', this.selectedFile, this.selectedFile.name);
-   
-    this.http.post('http://localhost:300/api/produtos/UploadFiles', uploadData, {
-      reportProgress: true,
-      observe: 'events'
-    })
-      .subscribe(event => {
-        console.log(event); // handle event here
-      });
-  }
-
-
 
   carouselOptions = {
     margin: 25,

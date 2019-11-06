@@ -2,20 +2,21 @@
   <div class="row">
       <form class="col s12" id="reg-form">
         <div class="row">
+            <div class="input-field col s6">
+                <input id="nome_produto" type="text" class="validate" required />
+                <label for="nome_produto">teste</label>
+              </div>
           <div class="input-field col s6">
             <input id="Nome" name="Nome" type="text" class="validate" [(ngModel)]="produto.Nome" required >
             <label for="Nome">Nome do Produto</label>
           </div>
-          <div class="input-field col s6">
-            <input id="NomeLoja" name="NomeLoja" type="text" class="validate" [(ngModel)]="produto.NomeLoja" required>
-            <label for="NomeLoja">Nome da Loja</label>
-          </div>
+          
         </div>
         <div class="row">
-          <div class="input-field col s6">
-            <input id="nome_produto" type="text" class="validate" required />
-            <label for="nome_produto">teste</label>
-          </div>
+            <div class="input-field col s6">
+                <input id="NomeLoja" name="NomeLoja" type="text" class="validate" [(ngModel)]="produto.NomeLoja" required>
+                <label for="NomeLoja">Nome da Loja</label>
+              </div>
           <div class="input-field col s6">
             <input id="Preco" name="Preco"  type="number" min="0" class="validate" [(ngModel)]="produto.Preco" required />
             <label for="Preco">Preço</label>
@@ -37,3 +38,7 @@
       </form>
     </div>
   </div>
+
+<img class="responsive-img" src={{produto.UrlFoto}}>
+<input type="file" (change)="onFileChanged($event)">
+<button (click)="onUpload()">Upload!</button>
