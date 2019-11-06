@@ -3,6 +3,7 @@ import { Produto } from 'src/app/models/produto.model';
 import { ProdutosService } from 'src/app/services/produtos.service';
 import { Router } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
+import { Global } from 'src/app/global';
 
 @Component({
   selector: 'app-cadastroproduto',
@@ -15,7 +16,7 @@ export class CadastroprodutoComponent implements OnInit {
   selectedFile: any;
 
   constructor(private produtoService : ProdutosService,
-              private router: Router,
+              private global : Global,
               private http : HttpClient) {
     this.produto = new Produto();
   }
@@ -46,10 +47,10 @@ export class CadastroprodutoComponent implements OnInit {
     const uploadData = new FormData();
     uploadData.append('myFile', this.selectedFile, this.selectedFile.name);
    
-    this.http.post('https://localhost:44376/api/produtos/UploadFiles', uploadData)
+    this.http.post(this.global.REST_API+'/api/produtos/UploadFiles', uploadData)
     .subscribe(
       data  => {
-        this.produto.UrlFoto = "https://localhost:44376"+data;
+        this.produto.UrlFoto = this.global.REST_API + data;
         console.log(data);
         //if(data == true){
         //  this.router.navigate(['CadastroProduto']);

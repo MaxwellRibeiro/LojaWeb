@@ -17,6 +17,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { CadastroprodutoComponent } from './pages/cadastroproduto/cadastroproduto.component';
 import { LoginComponent } from './pages/login/login.component';
 
+import { Global } from './global'
+
 
 @NgModule({
   declarations: [
@@ -38,7 +40,9 @@ import { LoginComponent } from './pages/login/login.component';
     HttpClientModule,
     FormsModule
   ],
-  providers: [],
+  providers: [
+    Global
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

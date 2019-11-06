@@ -13,8 +13,7 @@ export class DashboardComponent implements OnInit {
   produtos: Produto[];
   
 
-  constructor(private produtosService : ProdutosService,
-              private http : HttpClient) { }
+  constructor(private produtosService : ProdutosService) { }
 
   public getAllUsers() {
     this.produtosService.getAllProdutos().subscribe(produtos => this.produtos = produtos);

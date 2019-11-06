@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MzSidenavModule } from 'ngx-materialize'
+import { Global } from '../global';
 
 @Component({
   selector: 'app-header',
@@ -8,9 +9,12 @@ import { MzSidenavModule } from 'ngx-materialize'
 })
 export class HeaderComponent implements OnInit {
 
-  constructor() { }
+  urlLogo : string
+
+  constructor( private global : Global) { }
 
   ngOnInit() {
+    this.urlLogo = this.global.REST_API + "/logo.png";
   }
 
 }
