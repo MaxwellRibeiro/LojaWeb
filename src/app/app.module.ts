@@ -17,7 +17,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { CadastroprodutoComponent } from './pages/cadastroproduto/cadastroproduto.component';
 import { LoginComponent } from './pages/login/login.component';
 
-import { Global } from './global'
+import { Global } from './global';
+import { CadastrologinComponent } from './pages/cadastrologin/cadastrologin.component'
 
 
 @NgModule({
@@ -27,7 +28,8 @@ import { Global } from './global'
     HeaderComponent,
     FooterComponent,
     CadastroprodutoComponent,
-    LoginComponent
+    LoginComponent,
+    CadastrologinComponent
   ],
   imports: [
     BrowserAnimationsModule,

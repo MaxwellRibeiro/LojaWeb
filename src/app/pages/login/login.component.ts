@@ -33,5 +33,9 @@ export class LoginComponent implements OnInit {
       }  
     );
   }
+
+  public CriarNovo() {
+    this.router.navigate(['CadastroLogin']);
+  }
   
 }

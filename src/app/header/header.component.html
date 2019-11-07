@@ -1,33 +1,33 @@
 <nav>
-        <div class="nav-wrapper blue darken-4">
-            <img class="brand-logo" style="margin-top: 8px;" src="{{urlLogo}}" height="40px" width="40px" />
-            <a href="#" id="btn-sidenav-demo" class="button-collapse">
-                <i class="material-icons">menu</i>
-            </a>
-            <ul class="right hide-on-med-and-down">
-                    <li><a routerLink="/Dashboard"><i class="material-icons">home</i></a></li>
-                    <li><a routerLink="/Login"><i class="material-icons">account_circle</i></a></li>
-                    <li><a routerLink="/CadastroProduto"><i class="material-icons">account_circle</i></a></li>
-                </ul>
-        </div>
-        </nav>
-              
-              <mz-sidenav
-                [id]="'sidenav-demo'"
-                [collapseButtonId]="'btn-sidenav-demo'">
-                <mz-sidenav-header>
-                  Sidenav header
-                </mz-sidenav-header>
-                <mz-sidenav-subheader>Link Subheader</mz-sidenav-subheader>
-                <mz-sidenav-link>
-                  <a href="#">First Link</a>
-                </mz-sidenav-link>
-                <mz-sidenav-divider></mz-sidenav-divider>
-                <mz-sidenav-link [active]="true">
-                  <a href="#">Active Link</a>
-                </mz-sidenav-link>
-                <mz-sidenav-divider></mz-sidenav-divider>
-                <mz-sidenav-link>
-                  <a href="#" class="waves-effect">Second Link With Waves</a>
-                </mz-sidenav-link>
-              </mz-sidenav>
+<div class="nav-wrapper blue darken-4">
+    <img class="brand-logo" style="margin-top: 8px;" src="{{urlLogo}}" height="40px" width="40px" />
+    <a href="#" id="btn-sidenav-demo" class="button-collapse">
+        <i class="material-icons">menu</i>
+    </a>
+    <ul class="right hide-on-med-and-down">
+        <li><a routerLink="/Dashboard"><i class="material-icons">home</i></a></li>
+        <li><a routerLink="/Login"><i class="material-icons">account_circle</i></a></li>
+        <li><a routerLink="/CadastroProduto"><i class="material-icons">account_circle</i></a></li>
+    </ul>
+</div>
+</nav>
+      
+<mz-sidenav
+  [id]="'sidenav-demo'"
+  [collapseButtonId]="'btn-sidenav-demo'">
+  <mz-sidenav-header>
+    Sidenav header
+  </mz-sidenav-header>
+  <mz-sidenav-subheader>Link Subheader</mz-sidenav-subheader>
+  <mz-sidenav-link>
+    <a href="#">First Link</a>
+  </mz-sidenav-link>
+  <mz-sidenav-divider></mz-sidenav-divider>
+  <mz-sidenav-link [active]="true">
+    <a href="#">Active Link</a>
+  </mz-sidenav-link>
+  <mz-sidenav-divider></mz-sidenav-divider>
+  <mz-sidenav-link>
+    <a href="#" class="waves-effect">Second Link With Waves</a>
+  </mz-sidenav-link>
+</mz-sidenav>
