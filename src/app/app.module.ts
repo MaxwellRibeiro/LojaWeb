@@ -18,7 +18,8 @@ import { CadastroprodutoComponent } from './pages/cadastroproduto/cadastroprodut
 import { LoginComponent } from './pages/login/login.component';
 
 import { Global } from './global';
-import { CadastrologinComponent } from './pages/cadastrologin/cadastrologin.component'
+import { CadastrologinComponent } from './pages/cadastrologin/cadastrologin.component';
+import { ProdutodetalhesComponent } from './pages/produtodetalhes/produtodetalhes.component'
 
 
 @NgModule({
@@ -29,7 +30,8 @@ import { CadastrologinComponent } from './pages/cadastrologin/cadastrologin.comp
     FooterComponent,
     CadastroprodutoComponent,
     LoginComponent,
-    CadastrologinComponent
+    CadastrologinComponent,
+    ProdutodetalhesComponent
   ],
   imports: [
     BrowserAnimationsModule,

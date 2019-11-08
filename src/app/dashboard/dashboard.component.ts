@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ProdutosService } from '../services/produtos.service';
 import { Produto } from '../models/produto.model';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-dashboard',
@@ -11,7 +12,8 @@ export class DashboardComponent implements OnInit {
 
   produtos: Produto[];
 
-  constructor(private produtosService : ProdutosService) { }
+  constructor(private produtosService : ProdutosService,
+              private router: Router) { }
 
   ngOnInit() {
     this.getAllUsers();
