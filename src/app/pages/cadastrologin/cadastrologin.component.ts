@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Login } from 'src/app/models/login.model';
 import { LoginService } from 'src/app/services/login.service';
 import { Router } from '@angular/router';
+import { AlertService } from 'ngx-alerts';
 
 @Component({
   selector: 'app-cadastrologin',
@@ -13,7 +14,8 @@ export class CadastrologinComponent implements OnInit {
   login : Login;
 
   constructor(private loginService : LoginService,
-              private router : Router) { 
+              private router : Router,
+              private alertService: AlertService) { 
     this.login = new Login();
   }
 
@@ -24,11 +26,17 @@ export class CadastrologinComponent implements OnInit {
     this.loginService.CadastrarLogin(this.login).subscribe(
       data  => {
         if(data == true){
-          this.router.navigate(['Login']);
+          this.alertService.success('Login cadastrado');
+          setTimeout(() => 
+          {
+             this.router.navigate(['Login']);
+          },
+          1000);
         }
       },
       error  => {
-         console.log("Error", error);
+        this.alertService.danger('Ops. Ocorreu um problema.');
+        //console.log("Error", error.message);
       }  
     );
   }

@@ -21,6 +21,8 @@ import { Global } from './global';
 import { CadastrologinComponent } from './pages/cadastrologin/cadastrologin.component';
 import { ProdutodetalhesComponent } from './pages/produtodetalhes/produtodetalhes.component'
 
+import { AlertModule } from 'ngx-alerts';
+
 
 @NgModule({
   declarations: [
@@ -42,7 +44,8 @@ import { ProdutodetalhesComponent } from './pages/produtodetalhes/produtodetalhe
     MzSidenavModule,
     OwlModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    AlertModule.forRoot({maxMessages: 5, timeout: 5000, position: 'right'})
   ],
   providers: [
     Global
