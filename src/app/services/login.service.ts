@@ -12,7 +12,7 @@ export class LoginService {
               private global : Global) { }
 
   public VerificarAcesso(login: Login) { 
-    return this.httpService.post<Boolean>(this.global.REST_API + "/api/Login/Verificar", new Login().serialize(login), this.global.CONFIGHEADERS);
+    return this.httpService.post<number>(this.global.REST_API + "/api/Login/Verificar", new Login().serialize(login), this.global.CONFIGHEADERS);
   }
 
   public CadastrarLogin(login: Login) { 

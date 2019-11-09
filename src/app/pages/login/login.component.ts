@@ -27,9 +27,9 @@ export class LoginComponent implements OnInit {
     this.loginServide.VerificarAcesso(this.login).subscribe(
       data  => {
         console.log(data);
-        if(data == true){
+        if(data > 0){
           this.alertService.success('Acesso autorizado');
-          this.router.navigate(['CadastroProduto']);
+          this.router.navigate(['CadastroProduto', data]);
         }
         else {
           console.log(data);

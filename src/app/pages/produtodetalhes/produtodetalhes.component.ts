@@ -8,7 +8,7 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class ProdutodetalhesComponent implements OnInit {
 
-  id: String
+  id: String;
 
   constructor(private activatedRoute: ActivatedRoute) {  }
 

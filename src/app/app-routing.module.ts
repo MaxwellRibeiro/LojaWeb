@@ -8,7 +8,7 @@ import { ProdutodetalhesComponent } from './pages/produtodetalhes/produtodetalhe
 
 const routes: Routes = [
   { path: 'Dashboard', component: DashboardComponent },
-  { path: 'CadastroProduto', component: CadastroprodutoComponent },
+  { path: 'CadastroProduto/:IdLogin', component: CadastroprodutoComponent },
   { path: 'Login', component: LoginComponent },
   { path: 'CadastroLogin', component: CadastrologinComponent },
   { path: 'ProdutoDetalhes/:IdProduto', component: ProdutodetalhesComponent },

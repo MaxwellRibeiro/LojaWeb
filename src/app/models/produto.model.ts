@@ -3,6 +3,7 @@ import { Deserializable } from './deserializable.model';
 export class Produto implements Deserializable {
 
     public Id;
+    public IdLogin;
     public Nome;
     public UrlFoto;
     public NomeLoja;

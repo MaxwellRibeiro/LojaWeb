@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Produto } from 'src/app/models/produto.model';
 import { ProdutosService } from 'src/app/services/produtos.service';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
 import { Global } from 'src/app/global';
 
@@ -14,14 +14,18 @@ export class CadastroprodutoComponent implements OnInit {
 
   produto : Produto;
   selectedFile: any;
+  id: String;
 
   constructor(private produtoService : ProdutosService,
               private global : Global,
-              private http : HttpClient) {
+              private http : HttpClient,
+              private activatedRoute: ActivatedRoute) {
     this.produto = new Produto();
   }
 
   ngOnInit() {
+    this.id = this.activatedRoute.snapshot.paramMap.get("IdLogin");
+    console.log(this.id);
   }
 
   public Cadastrar() {
