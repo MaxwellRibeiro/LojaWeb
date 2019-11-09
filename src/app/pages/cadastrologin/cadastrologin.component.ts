@@ -27,11 +27,9 @@ export class CadastrologinComponent implements OnInit {
       data  => {
         if(data == true){
           this.alertService.success('Login cadastrado');
-          setTimeout(() => 
-          {
-             this.router.navigate(['Login']);
-          },
-          1000);
+          this.router.navigate(['Login']);
+        }else{
+          this.alertService.danger('Acesso negado.');
         }
       },
       error  => {
