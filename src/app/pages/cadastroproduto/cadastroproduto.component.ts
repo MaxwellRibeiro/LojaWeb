@@ -4,6 +4,8 @@ import { ProdutosService } from 'src/app/services/produtos.service';
 import { Router, ActivatedRoute } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
 import { Global } from 'src/app/global';
+import { LoginService } from 'src/app/services/login.service';
+import { Login } from 'src/app/models/login.model';
 
 @Component({
   selector: 'app-cadastroproduto',
@@ -12,19 +14,28 @@ import { Global } from 'src/app/global';
 })
 export class CadastroprodutoComponent implements OnInit {
 
+  login : Login;
   produto : Produto;
   selectedFile: any;
 
   constructor(private produtoService : ProdutosService,
+              private logiService : LoginService,
               private global : Global,
               private http : HttpClient,
               private activatedRoute: ActivatedRoute) {
     this.produto = new Produto();
+    this.login = new Login();
   }
 
   ngOnInit() {
-    this.produto.IdLogin = this.activatedRoute.snapshot.paramMap.get("IdLogin");
+    const idLogin = this.activatedRoute.snapshot.paramMap.get("IdLogin");
+    this.logiService.getLoginPorId(idLogin).subscribe(login => {
+      this.login = login;
+      this.produto.IdLogin = login.Id;
+      this.produto.NomeLoja = login.NomeLoja;
+    });
     this.produto.UrlFoto = this.global.REST_API + "/uploads/semfoto.jpg"
+  
   }
 
   public Cadastrar() {
