@@ -14,5 +14,9 @@ export class LoginService {
   public VerificarAcesso(login: Login) { 
     return this.httpService.post<Boolean>(this.global.REST_API + "/api/Login/Verificar", new Login().serialize(login), this.global.CONFIGHEADERS);
   }
+
+  public CadastrarLogin(login: Login) { 
+    return this.httpService.post<Boolean>(this.global.REST_API + "/api/Login/Insert", new Login().serialize(login), this.global.CONFIGHEADERS);
+  }
   
 }
