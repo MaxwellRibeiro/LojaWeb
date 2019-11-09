@@ -1,0 +1,52 @@
+<div class="row">
+    <div class="col s12 m8 push-m2">
+      <h3 class="light"> Clientes </h3>
+      <table class="striped">
+        <thead>
+          <tr>
+            <th>Nome:</th>
+            <th>Sobrenome:</th>
+            <th>Email:</th>
+            <th>Idade:</th>
+          </tr>
+        </thead>
+  
+        <tbody>
+          <tr>
+            <td>nome</td>
+            <td>sobrenome</td>
+            <td>email</td>
+            <td>idade</td>
+            <td><a href="#" class="btn-floating orange"><i class="material-icons">edit</i></a></td>
+  
+            <td><a href="#" class="btn-floating red modal-trigger"><i class="material-icons">delete</i></a></td>
+  
+            <!-- Modal Structure -->
+              <div class="modal">
+                <div class="modal-content">
+                  <h4>Opa!</h4>
+                  <p>Tem certeza que deseja excluir esse cliente?</p>
+                </div>
+                <div class="modal-footer">					     
+  
+                  <form>
+                    <input type="hidden" name="id">
+                    <button type="submit" name="btn-deletar" class="btn red">Sim, quero deletar</button>
+  
+                     <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Cancelar</a>
+  
+                  </form>
+  
+                </div>
+              </div>
+  
+          </tr>
+  
+  
+        </tbody>
+      </table>
+      <br>
+      <a href="#" class="btn">Adicionar cliente</a>
+    </div>
+  </div>
+  

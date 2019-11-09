@@ -5,9 +5,11 @@ import { CadastroprodutoComponent } from './pages/cadastroproduto/cadastroprodut
 import { LoginComponent } from './pages/login/login.component';
 import { CadastrologinComponent } from './pages/cadastrologin/cadastrologin.component';
 import { ProdutodetalhesComponent } from './pages/produtodetalhes/produtodetalhes.component'
+import { ListaprodutosComponent } from './pages/listaprodutos/listaprodutos.component'
 
 const routes: Routes = [
   { path: 'Dashboard', component: DashboardComponent },
+  { path: 'ListaProdutos', component: ListaprodutosComponent },
   { path: 'CadastroProduto/:IdLogin', component: CadastroprodutoComponent },
   { path: 'Login', component: LoginComponent },
   { path: 'CadastroLogin', component: CadastrologinComponent },
