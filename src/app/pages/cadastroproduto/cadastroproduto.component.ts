@@ -14,7 +14,6 @@ export class CadastroprodutoComponent implements OnInit {
 
   produto : Produto;
   selectedFile: any;
-  id: String;
 
   constructor(private produtoService : ProdutosService,
               private global : Global,
@@ -24,8 +23,8 @@ export class CadastroprodutoComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.id = this.activatedRoute.snapshot.paramMap.get("IdLogin");
-    console.log(this.id);
+    this.produto.IdLogin = this.activatedRoute.snapshot.paramMap.get("IdLogin");
+    this.produto.UrlFoto = this.global.REST_API + "/uploads/semfoto.jpg"
   }
 
   public Cadastrar() {
