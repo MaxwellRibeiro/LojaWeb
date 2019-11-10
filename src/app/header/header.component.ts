@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { MzSidenavModule } from 'ngx-materialize'
 import { Global } from '../global';
 
 @Component({

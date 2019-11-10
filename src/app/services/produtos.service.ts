@@ -39,4 +39,9 @@ export class ProdutosService {
     return this.httpService.post<Boolean>(this.global.REST_API + "/api/produtos/Update", new Produto().serialize(produto), this.global.CONFIGHEADERS);
   }
 
+  public DetelarProduto(produto: Produto) { 
+    return this.httpService.post<Boolean>(this.global.REST_API + "/api/produtos/Delete", new Produto().serialize(produto), this.global.CONFIGHEADERS);
+  }
+
+
 }

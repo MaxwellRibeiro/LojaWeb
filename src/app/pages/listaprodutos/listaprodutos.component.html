@@ -16,9 +16,9 @@
           <tr *ngFor="let produto of produtos">
             <td>{{produto.Nome}}</td>
             <td>{{produto.Preco}}</td>
-            <td><a href="#" class="btn-floating orange" [routerLink]="['/AlterarProduto/', produto.Id]"><i class="material-icons">edit</i></a></td>
+            <td><a class="btn-floating orange" [routerLink]="['/AlterarProduto/', produto.Id]"><i class="material-icons">edit</i></a></td>
   
-            <td><a href="#" class="btn-floating red modal-trigger"><i class="material-icons">delete</i></a></td>
+            <td><a class="btn-floating red modal-trigger" (click)="DeletarProduto(produto)" ><i class="material-icons">delete</i></a></td>
   
           </tr>
   

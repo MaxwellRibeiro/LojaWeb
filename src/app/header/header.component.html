@@ -15,18 +15,16 @@
   [id]="'sidenav-demo'"
   [collapseButtonId]="'btn-sidenav-demo'">
   <mz-sidenav-header>
-    Sidenav header
+    <img src="{{urlLogo}}" alt="Atlantic" style="margin-top: 10px; margin-left: 95px;"  width="100px" height="100px">
   </mz-sidenav-header>
-  <mz-sidenav-subheader>Link Subheader</mz-sidenav-subheader>
-  <mz-sidenav-link>
-    <a href="#">First Link</a>
-  </mz-sidenav-link>
+  <mz-sidenav-subheader>Menu</mz-sidenav-subheader>
   <mz-sidenav-divider></mz-sidenav-divider>
-  <mz-sidenav-link [active]="true">
-    <a href="#">Active Link</a>
+  <mz-sidenav-link>
+      <li><a routerLink="/"><i class="material-icons">home</i>Home</a></li>
   </mz-sidenav-link>
   <mz-sidenav-divider></mz-sidenav-divider>
   <mz-sidenav-link>
-    <a href="#" class="waves-effect">Second Link With Waves</a>
+      <a routerLink="/Login"><i class="material-icons">lock</i>Login</a>
   </mz-sidenav-link>
+  <mz-sidenav-divider></mz-sidenav-divider>
 </mz-sidenav>
