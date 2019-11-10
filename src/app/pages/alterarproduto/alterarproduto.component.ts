@@ -1,50 +1,39 @@
 import { Component, OnInit } from '@angular/core';
+import { Router, ActivatedRoute } from '@angular/router';
+import { AlertService } from 'ngx-alerts';
 import { Produto } from 'src/app/models/produto.model';
 import { ProdutosService } from 'src/app/services/produtos.service';
-import { Router, ActivatedRoute } from '@angular/router';
-import { HttpClient } from '@angular/common/http';
 import { Global } from 'src/app/global';
-import { LoginService } from 'src/app/services/login.service';
-import { Login } from 'src/app/models/login.model';
-import { AlertService } from 'ngx-alerts';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
-  selector: 'app-cadastroproduto',
-  templateUrl: './cadastroproduto.component.html',
-  styleUrls: ['./cadastroproduto.component.css']
+  selector: 'app-alterarproduto',
+  templateUrl: './alterarproduto.component.html',
+  styleUrls: ['./alterarproduto.component.css']
 })
-export class CadastroprodutoComponent implements OnInit {
+export class AlterarprodutoComponent implements OnInit {
 
-  login : Login;
   produto : Produto;
   selectedFile: any;
 
   constructor(private produtoService : ProdutosService,
-              private logiService : LoginService,
               private global : Global,
               private router : Router,
               private http : HttpClient,
               private alertService: AlertService,
               private activatedRoute: ActivatedRoute) {
     this.produto = new Produto();
-    this.login = new Login();
   }
 
   ngOnInit() {
-    const idLogin = this.activatedRoute.snapshot.paramMap.get("IdLogin");
-    this.logiService.getLoginPorId(idLogin).subscribe(login => {
-      this.login = login;
-      this.produto.IdLogin = login.Id;
-      this.produto.NomeLoja = login.NomeLoja;
-    });
-    this.produto.UrlFoto = this.global.REST_API + "/uploads/semfoto.jpg"
-  
+    const idProduto = this.activatedRoute.snapshot.paramMap.get("IdProduto");
+    this.produtoService.getProdutosPorId(idProduto).subscribe(produto =>this.produto = produto);
   }
 
-  public Cadastrar() {
-    this.produtoService.CadastrarProduto(this.produto).subscribe(
+  public Atualizar() {
+    this.produtoService.AtualizarProduto(this.produto).subscribe(
       data  => {
-        this.alertService.success('Produto cadastrado');
+        this.alertService.success('Produto atualizado');
         if(data == true){
           this.router.navigate(['ListaProdutos', this.produto.IdLogin]);
         }
@@ -76,6 +65,5 @@ export class CadastroprodutoComponent implements OnInit {
       }  
     );
   }
-
 
 }

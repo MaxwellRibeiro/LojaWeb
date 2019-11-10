@@ -1,0 +1,64 @@
+<ngx-alerts></ngx-alerts>
+<app-header></app-header>
+
+<div class="container">
+  <div class="row">
+      <form class="col s12" id="reg-form">
+        <h4 style="text-align: center; color: gray; ">Alterar Produto</h4>
+        <div class="row">
+            <div class="input-field col s6">
+              <div style="margin-left: 150px;">
+                  <img class="responsive-img" src={{produto.UrlFoto}} width="100px" height="100px">
+              </div>
+              <div class = "file-field input-field">
+                <div class = "btn">
+                   <span>Buscar</span>
+                   <input type = "file" (change)="onFileChanged($event)" />
+                </div>
+                <div class = "file-path-wrapper">
+                   <input class = "file-path validate" type = "text" placeholder = "Upload file" />
+                </div>
+
+                <div class = "btn" style="width: 100%;" (click)="onUpload()">
+                    <span>Confirmar Imagem</span>
+                 </div>
+                
+             </div>
+            </div>
+            <div class="input-field col s6 " style="margin-top: 155px;">
+                <p style="color:gainsboro;">Nome da Loja</p>
+                <input id="NomeLoja" name="NomeLoja" type="text" class="validate" [(ngModel)]="produto.NomeLoja" disabled >
+            </div>
+          
+        </div>
+        <div class="row">
+            <div class="input-field col s6">
+                <p style="color:gray;">Nome do Produto</p>
+                <input id="Nome" name="Nome" type="text" class="validate" [(ngModel)]="produto.Nome" required >
+              </div>
+          <div class="input-field col s6">
+            <p style="color:gray;">Preço</p>
+            <input id="Preco" name="Preco"  type="number" min="0" class="validate" [(ngModel)]="produto.Preco" required />
+          </div>
+        </div>
+        <div class="row">
+          <div class="input-field col s12">
+              <p style="color:gray;">Descrição</p>
+              <textarea id="Descricao" name="Descricao" type="text" class="materialize-textarea" [(ngModel)]="produto.Descricao" required> </textarea>
+          </div>
+        </div>
+        <div class="row">
+          <div class="input-field col s2" style="float: right;">
+            <button class="btn btn-large btn-register waves-effect waves-light" type="submit" name="action" (click)="Atualizar()">atualizar
+            </button>
+          </div>
+          <div class="input-field col s2" style="float: right;">
+              <button class="btn btn-large btn-register waves-effect waves-light" [routerLink]="['/ListaProdutos/', produto.IdLogin]" name="action">Cancelar
+              </button>
+            </div>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <app-footer></app-footer>

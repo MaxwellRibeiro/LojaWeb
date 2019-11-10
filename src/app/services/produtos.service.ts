@@ -25,8 +25,18 @@ export class ProdutosService {
     );
   }
 
+  public getProdutosPorId(idProduto): Observable<Produto> {
+    return this.httpService.get<Produto>(this.global.REST_API +"/api/produtos/BuscaProdutoPorId?idProduto="+idProduto).pipe(
+      map(data => new  Produto().deserialize(data))
+    );
+  }
+
   public CadastrarProduto(produto: Produto) { 
     return this.httpService.post<Boolean>(this.global.REST_API + "/api/produtos/Insert", new Produto().serialize(produto), this.global.CONFIGHEADERS);
+  }
+
+  public AtualizarProduto(produto: Produto) { 
+    return this.httpService.post<Boolean>(this.global.REST_API + "/api/produtos/Update", new Produto().serialize(produto), this.global.CONFIGHEADERS);
   }
 
 }

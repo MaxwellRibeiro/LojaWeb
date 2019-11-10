@@ -16,28 +16,9 @@
           <tr *ngFor="let produto of produtos">
             <td>{{produto.Nome}}</td>
             <td>{{produto.Preco}}</td>
-            <td><a href="#" class="btn-floating orange"><i class="material-icons">edit</i></a></td>
+            <td><a href="#" class="btn-floating orange" [routerLink]="['/AlterarProduto/', produto.Id]"><i class="material-icons">edit</i></a></td>
   
             <td><a href="#" class="btn-floating red modal-trigger"><i class="material-icons">delete</i></a></td>
-  
-            <!-- Modal Structure -->
-              <div class="modal">
-                <div class="modal-content">
-                  <h4>Opa!</h4>
-                  <p>Tem certeza que deseja excluir esse cliente?</p>
-                </div>
-                <div class="modal-footer">					     
-  
-                  <form>
-                    <input type="hidden" name="id">
-                    <button type="submit" name="btn-deletar" class="btn red">Sim, quero deletar</button>
-  
-                     <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Cancelar</a>
-  
-                  </form>
-  
-                </div>
-              </div>
   
           </tr>
   

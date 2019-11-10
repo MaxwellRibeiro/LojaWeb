@@ -6,10 +6,12 @@ import { LoginComponent } from './pages/login/login.component';
 import { CadastrologinComponent } from './pages/cadastrologin/cadastrologin.component';
 import { ProdutodetalhesComponent } from './pages/produtodetalhes/produtodetalhes.component'
 import { ListaprodutosComponent } from './pages/listaprodutos/listaprodutos.component'
+import { AlterarprodutoComponent } from './pages/alterarproduto/alterarproduto.component'
 
 const routes: Routes = [
   { path: 'Dashboard', component: DashboardComponent },
   { path: 'ListaProdutos/:IdLogin', component: ListaprodutosComponent },
+  { path: 'AlterarProduto/:IdProduto', component: AlterarprodutoComponent },
   { path: 'CadastroProduto/:IdLogin', component: CadastroprodutoComponent },
   { path: 'Login', component: LoginComponent },
   { path: 'CadastroLogin', component: CadastrologinComponent },

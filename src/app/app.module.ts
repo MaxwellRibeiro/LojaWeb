@@ -23,6 +23,7 @@ import { ProdutodetalhesComponent } from './pages/produtodetalhes/produtodetalhe
 
 import { AlertModule } from 'ngx-alerts';
 import { ListaprodutosComponent } from './pages/listaprodutos/listaprodutos.component';
+import { AlterarprodutoComponent } from './pages/alterarproduto/alterarproduto.component';
 
 
 @NgModule({
@@ -35,7 +36,8 @@ import { ListaprodutosComponent } from './pages/listaprodutos/listaprodutos.comp
     LoginComponent,
     CadastrologinComponent,
     ProdutodetalhesComponent,
-    ListaprodutosComponent
+    ListaprodutosComponent,
+    AlterarprodutoComponent
   ],
   imports: [
     BrowserAnimationsModule,
