@@ -16,10 +16,10 @@ export class DashboardComponent implements OnInit {
               private router: Router) { }
 
   ngOnInit() {
-    this.getAllUsers();
+    this.getAllProdutos();
  }
 
-  public getAllUsers() {
+  public getAllProdutos() {
     this.produtosService.getAllProdutos().subscribe(produtos => this.produtos = produtos);
   }
 

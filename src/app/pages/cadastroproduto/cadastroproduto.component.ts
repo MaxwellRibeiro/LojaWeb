@@ -6,6 +6,7 @@ import { HttpClient } from '@angular/common/http';
 import { Global } from 'src/app/global';
 import { LoginService } from 'src/app/services/login.service';
 import { Login } from 'src/app/models/login.model';
+import { AlertService } from 'ngx-alerts';
 
 @Component({
   selector: 'app-cadastroproduto',
@@ -21,7 +22,9 @@ export class CadastroprodutoComponent implements OnInit {
   constructor(private produtoService : ProdutosService,
               private logiService : LoginService,
               private global : Global,
+              private router : Router,
               private http : HttpClient,
+              private alertService: AlertService,
               private activatedRoute: ActivatedRoute) {
     this.produto = new Produto();
     this.login = new Login();
@@ -41,13 +44,14 @@ export class CadastroprodutoComponent implements OnInit {
   public Cadastrar() {
     this.produtoService.CadastrarProduto(this.produto).subscribe(
       data  => {
-        console.log(data);
-        //if(data == true){
-        //  this.router.navigate(['CadastroProduto']);
-        //}
+        this.alertService.success('Produto cadastrado');
+        if(data == true){
+          this.router.navigate(['ListaProdutos', this.produto.IdLogin]);
+        }
       },
       error  => {
-         console.log("Error", error);
+         this.alertService.danger('Ops. Ocorreu um problema.');
+         //console.log("Error", error);
       }  
     );
   }

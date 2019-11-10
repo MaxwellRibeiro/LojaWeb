@@ -9,7 +9,7 @@ import { ListaprodutosComponent } from './pages/listaprodutos/listaprodutos.comp
 
 const routes: Routes = [
   { path: 'Dashboard', component: DashboardComponent },
-  { path: 'ListaProdutos', component: ListaprodutosComponent },
+  { path: 'ListaProdutos/:IdLogin', component: ListaprodutosComponent },
   { path: 'CadastroProduto/:IdLogin', component: CadastroprodutoComponent },
   { path: 'Login', component: LoginComponent },
   { path: 'CadastroLogin', component: CadastrologinComponent },

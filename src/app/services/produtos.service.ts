@@ -19,6 +19,12 @@ export class ProdutosService {
     );
   }
 
+  public getProdutosPorLogin(idLogin): Observable<Produto[]> {
+    return this.httpService.get<Produto[]>(this.global.REST_API +"/api/produtos/BuscaProdutosPorLogin?idLogin="+idLogin).pipe(
+      map(data => data.map(data => new  Produto().deserialize(data)))
+    );
+  }
+
   public CadastrarProduto(produto: Produto) { 
     return this.httpService.post<Boolean>(this.global.REST_API + "/api/produtos/Insert", new Produto().serialize(produto), this.global.CONFIGHEADERS);
   }

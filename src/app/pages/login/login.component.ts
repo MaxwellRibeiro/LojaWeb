@@ -16,7 +16,7 @@ export class LoginComponent implements OnInit {
   constructor(private loginServide: LoginService,
               private router: Router,
               private alertService: AlertService) {
-    this.login = new Login();
+      this.login = new Login();
    }
 
   ngOnInit() {
@@ -29,7 +29,7 @@ export class LoginComponent implements OnInit {
         console.log(data);
         if(data > 0){
           this.alertService.success('Acesso autorizado');
-          this.router.navigate(['CadastroProduto', data]);
+          this.router.navigate(['ListaProdutos', data]);
         }
         else {
           console.log(data);
