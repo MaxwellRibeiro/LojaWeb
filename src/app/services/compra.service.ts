@@ -22,4 +22,8 @@ export class CompraService {
   public Cadastrar(compra: Compra) { 
     return this.httpService.post<Boolean>(this.global.REST_API + "/api/Compra/Insert", new Compra().serialize(compra), this.global.CONFIGHEADERS);
   }
+
+  public DetelarCompra(compra: Compra) { 
+    return this.httpService.post<Boolean>(this.global.REST_API + "/api/Compra/Delete", new Compra().serialize(compra), this.global.CONFIGHEADERS);
+  }
 }

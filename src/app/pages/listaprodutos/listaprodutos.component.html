@@ -15,7 +15,7 @@
         <tbody>
           <tr *ngFor="let produto of produtos">
             <td>{{produto.Nome}}</td>
-            <td>{{produto.Preco}}</td>
+            <td>R$ {{produto.Preco}},00</td>
             <td><a class="btn-floating orange" [routerLink]="['/AlterarProduto/', produto.Id]"><i class="material-icons">edit</i></a></td>
   
             <td><a class="btn-floating red modal-trigger" (click)="DeletarProduto(produto)" ><i class="material-icons">delete</i></a></td>

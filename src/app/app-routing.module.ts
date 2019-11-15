@@ -7,6 +7,7 @@ import { CadastrologinComponent } from './pages/cadastrologin/cadastrologin.comp
 import { ProdutodetalhesComponent } from './pages/produtodetalhes/produtodetalhes.component'
 import { ListaprodutosComponent } from './pages/listaprodutos/listaprodutos.component'
 import { AlterarprodutoComponent } from './pages/alterarproduto/alterarproduto.component'
+import { ComprasComponent } from './pages/compras/compras.component'
 
 const routes: Routes = [
   { path: 'Dashboard', component: DashboardComponent },
@@ -15,6 +16,7 @@ const routes: Routes = [
   { path: 'CadastroProduto/:IdLogin', component: CadastroprodutoComponent },
   { path: 'Login', component: LoginComponent },
   { path: 'CadastroLogin', component: CadastrologinComponent },
+  { path: 'Compras', component: ComprasComponent },
   { path: 'ProdutoDetalhes/:IdProduto', component: ProdutodetalhesComponent },
   { path: '', redirectTo: '/Dashboard', pathMatch: 'full' }
   

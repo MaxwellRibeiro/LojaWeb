@@ -1,0 +1,35 @@
+<ngx-alerts></ngx-alerts>
+<app-header></app-header>
+
+<div class="row">
+    <div class="col s12">
+      <h3 class="light"> Carrinho de compra</h3>
+      <table class="striped">
+        <thead>
+          <tr>
+            <th style="width: 600px;">Produto</th>
+            <th style="width: 400px;">Loja parceira</th>
+            <th>Quantidade</th>
+            <th>Valor total</th>
+          </tr>
+        </thead>
+  
+        <tbody>
+          <tr *ngFor="let compra of compras">
+            <td>{{compra.NomeProduto}}</td>
+            <td>{{compra.NomeLoja}}</td>
+            <td>{{compra.Quantidade}}</td>
+            <td>R$ {{compra.PrecoTotal}},00</td>
+  
+            <td><a class="btn-floating red modal-trigger" (click)="DeletarCompra(compra)" ><i class="material-icons">remove_shopping_cart</i></a></td>
+  
+          </tr>
+  
+  
+        </tbody>
+      </table>
+      <br>
+    </div>
+  </div>
+  
+  <app-footer></app-footer>

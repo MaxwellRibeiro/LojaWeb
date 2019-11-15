@@ -43,7 +43,7 @@ export class ProdutodetalhesComponent implements OnInit {
       data  => {
         this.alertService.success('Adicionado no carrinho de compras');
         if(data == true){
-          this.router.navigate(['/']);
+          this.router.navigate(['Compras']);
         }
       },
       error  => {
